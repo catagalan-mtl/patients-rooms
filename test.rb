@@ -19,9 +19,10 @@ require_relative "./patient_repository.rb"
 # # p room
 room_repo = RoomRepository.new('./rooms.csv')
 repo = PatientRepository.new("./patients.csv", room_repo)
+# john = Patient.new(name: "John", blood_type: "A-")
+# repo.add(john)
+# # p repo
+# pipa = Patient.new(name: "Pipa", blood_type: "AB+", room_id: 2)
+# repo.add(pipa)
 # p repo
-anne = Patient.new(name: "Anne")
-repo.add(anne)
-cata = Patient.new(name: "Cata")
-repo.add(cata)
-p repo
+p @patients.name("Pipa").room

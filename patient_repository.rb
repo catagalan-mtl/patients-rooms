@@ -16,7 +16,7 @@ class PatientRepository
     patient.id = @next_id
     @patients << patient
     @next_id += 1
-    # save_csv TODO!
+    save_csv
   end
 
   private
@@ -28,10 +28,19 @@ class PatientRepository
       patient = Patient.new(row)
       room = @room_repository.find(row[:room_id].to_i)
       patient.room = room
-      p patient.room
+      # p patient.room
       @patients << patient
     end
     @next_id = @patients.empty? ? 1 : @patients.last.id + 1
+  end
+
+  def save_csv
+    CSV.open(@csv_file, 'wb') do |csv|
+      csv << ['id', 'name', 'cured', 'blood_type', 'room_id']
+      @patients.each do |patient|
+        csv << [patient.id, patient.name, patient.cured, patient.blood_type, patient.room_id]
+      end
+    end
   end
 
 end

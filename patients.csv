@@ -1,4 +1,8 @@
 id,name,cured,blood_type,room_id
-1,john,FALSE,A-,1
-2,sarah,FALSE,O-,1
-3,peter,FALSE,AB+,2
+1,john,false,A-,1
+2,sarah,false,O-,1
+3,peter,false,AB+,2
+4,Anne,false,A-,
+5,Cata,false,AB+,2
+6,John,false,A-,
+7,Dude,false,AB+,2
